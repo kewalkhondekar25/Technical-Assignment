@@ -27,4 +27,5 @@ export const {
   setSubjectLineB,
   setPreviewText
 } = emailSlice.actions;
+
 export default emailSlice.reducer;
