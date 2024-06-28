@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setSubjectLineA, setSubjectLineB } from '../features/email/emailSlice';
+import { setPreviewText, setSubjectLineA, setSubjectLineB } from '../features/email/emailSlice';
 import { TextField, InputAdornment, Tooltip, Box, Button, Typography, Grid, InputLabel } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
@@ -46,7 +46,7 @@ const EmailSubjectInput = () => {
               ),
               endAdornment: (
                 <InputAdornment position="end">
-                  <PersonIcon />
+                  <PersonIcon style={{color: "blue"}} />
                 </InputAdornment>
               ),
             }}
@@ -58,14 +58,15 @@ const EmailSubjectInput = () => {
         <Grid item xs={12} sx={{ textAlign: 'right' }}>
           <Button variant="Solid" color="neutral" style={{
             border: "0.1px solid", 
-            borderRadius: 20,  // Rounded corners
-            backgroundColor: 'white',  // White background
-            borderColor: 'gray',  // Blue border color
+            borderRadius: 20,  
+            backgroundColor: 'white', 
+            borderColor: 'gray', 
           }} >
             Use AI
           </Button>
         </Grid>
       </Grid>
+
       <Grid item container spacing={1} alignItems="center">
         <Grid item xs>
           <TextField
@@ -91,7 +92,7 @@ const EmailSubjectInput = () => {
               ),
               endAdornment: (
                 <InputAdornment position="end">
-                  <PersonIcon />
+                  <PersonIcon style={{color: "blue"}} />
                 </InputAdornment>
               ),
             }}
@@ -103,14 +104,41 @@ const EmailSubjectInput = () => {
         <Grid item xs={12} sx={{ textAlign: 'right' }}>
           <Button variant="Solid" color="neutral" style={{
             border: "0.1px solid", 
-            borderRadius: 20,  // Rounded corners
-            backgroundColor: 'white',  // White background
-            borderColor: 'gray',  // Blue border color
+            borderRadius: 20,  
+            backgroundColor: 'white',  
+            borderColor: 'gray',  
           }} >
             Use AI
           </Button>
         </Grid>
       </Grid>
+
+      {/* Preview Text */}
+      <Grid item container alignItems="center">
+        <InputLabel sx={{ mr: 0.5 }}>
+          Preview Text
+        </InputLabel>
+        <Tooltip title="Helper text">
+          <HelpOutlineIcon sx={{ ml: 0.5, cursor: 'pointer', color: "blue" }} />
+        </Tooltip>
+      </Grid>    
+      <Grid item xs>
+          <TextField
+            id="preview"
+            placeholder=""
+            onChange={(e) => dispatch(setPreviewText(e.target.value))}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <PersonIcon style={{color: "blue"}} />
+                </InputAdornment>
+              ),
+            }}
+            variant="outlined"
+            size="small"
+            fullWidth
+          />
+        </Grid>
     </Grid>
   )
 }

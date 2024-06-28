@@ -3,24 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import EmailSubjectInput from './components/EmailSubjectInput'
-import EmailPreview from './components/EmailPreview'
-import SubjectLine from './components/SubjectLine'
 import { Grid } from '@mui/material';
+import EmailScreen from './components/EmailScreen'
 
 function App() {
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
       <Grid item xs={12} sm={8} md={6} lg={4}>
         <EmailSubjectInput />
       </Grid>
       <Grid item xs={12} sm={8} md={6} lg={4}>
-        <EmailPreview />
+        <EmailScreen/>
       </Grid>
-      {/* Uncomment if you want to include SubjectLine */}
-      {/* <Grid item xs={12} sm={8} md={6} lg={4}>
-        <SubjectLine />
-      </Grid> */}
     </Grid>
   )
 }
