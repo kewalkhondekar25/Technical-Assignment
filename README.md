@@ -20,7 +20,7 @@ This React-based web application allows users to dynamically preview email subje
 # Setup Instructions
 
 - Clone Repository
-  - git clone https://github.com/kewalkhondekar25/Technical-Assignment-
+  - git clone https://github.com/kewalkhondekar25/Technical-Assignment
   - cd email-preview
 - Install Dependencies
   - npm install
